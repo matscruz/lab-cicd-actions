@@ -3,47 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu site - Versão 3 — corrigida</title>
+  <title>Feliz Natal - Site publicado</title>
   <style>
+    :root {
+      color-scheme: light;
+      --pine: #173d32;
+      --pine-dark: #0c2921;
+      --berry: #a33442;
+      --gold: #d7ad5d;
+      --paper: #fffaf0;
+      --ink: #26332d;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: grid;
       place-items: center;
-      font-family: system-ui, "Segoe UI", Roboto, sans-serif;
-      background: #0000FF;
+      font-family: Georgia, "Palatino Linotype", serif;
+      color: var(--ink);
       padding: 1rem;
+      background-color: var(--pine-dark);
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .72) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 34%, rgba(255, 255, 255, .55) 0 1px, transparent 2px),
+        radial-gradient(circle at 35% 82%, rgba(255, 255, 255, .5) 0 1px, transparent 2px),
+        linear-gradient(145deg, #245544, var(--pine-dark) 72%);
+      background-size: 113px 127px, 157px 181px, 191px 173px, auto;
     }
+
     .cartao {
-      background: #fff;
-      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid rgba(215, 173, 93, .8);
+      border-radius: 8px;
       padding: 2.5rem;
-      max-width: 520px;
+      max-width: 560px;
       width: 100%;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
       text-align: center;
-      color: #1d1d1f;
     }
-    .emoji { font-size: 4rem; }
-    h1 { margin: .5rem 0; color: #007FFF; }
+
+    .cartao::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7px;
+      background: repeating-linear-gradient(90deg, var(--berry) 0 24px, var(--gold) 24px 48px, var(--pine) 48px 72px);
+    }
+
+    .emoji { font-size: 3.5rem; }
+    h1 { margin: .5rem 0; color: var(--berry); }
+    p { line-height: 1.6; }
+
     .versao {
       margin-top: 1.5rem;
       padding: 1rem;
-      border-radius: 12px;
-      background: #ffa500;
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      background: #f3eee1;
       text-align: left;
       line-height: 1.8;
+      overflow-wrap: anywhere;
     }
-    code { background: #e5e5ea; padding: 2px 6px; border-radius: 6px; }
-    footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e5e5ea; color: #6e6e73; font-size: .85rem; }
+
+    code { background: #e8e1d1; padding: 2px 6px; border-radius: 3px; }
+    footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #dfd6c3; color: #526158; font-size: .85rem; line-height: 1.6; }
+
+    @media (max-width: 480px) {
+      .cartao { padding: 2rem 1.25rem 1.5rem; }
+    }
   </style>
 </head>
 <body>
   <main class="cartao">
-    <div class="emoji">✅</div>
-    <h1>Versão 5 — corrigida</h1>
-    <p>O erro foi corrigido e o robô publicou de novo.</p>
-  <p>Seja Feliz independente de tudo</p>
+    <div class="emoji" aria-hidden="true">🎄</div>
+    <h1>Feliz Natal!</h1>
+    <p>Que esta época traga alegria, união e bons momentos.</p>
     <div class="versao">
       🤖 <strong>Publicado pelo robô em:</strong> __DATA__<br>
       🔖 <strong>Commit:</strong> <code>__COMMIT__</code><br>
